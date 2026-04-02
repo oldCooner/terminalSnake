@@ -2,6 +2,8 @@
 #define GAME_HEADER_
 
 #include <stdio.h>
+#include "Map.h"
+
 
 //initializes the game
 int game_init();

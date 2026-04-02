@@ -22,5 +22,11 @@ set(SOURCE_FILES
 
 
 add_executable( ${OUTPUT_NAME} ${SOURCE_FILES} )
-target_compile_options( ${OUTPUT_NAME} PRIVATE -Wall -Werror -g ) # warning failures for me only
+target_compile_options( ${OUTPUT_NAME} PRIVATE #apply to my code only
+                            -fsanitize=address #address sanitization
+                            -fno-omit-frame-pointer # asan stack trace
+                            -Wall # throw warnings 
+                            -Werror # error out on warnings
+                            -g )
+target_link_options(${OUTPUT_NAME} PRIVATE -fsanitize=address)
 target_link_libraries(${OUTPUT_NAME} PRIVATE)

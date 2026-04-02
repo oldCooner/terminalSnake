@@ -5,6 +5,8 @@ int game_init()
     char strSent[] = "Initializing the game\n";
     printf(strSent);
 
+    Map_Init();
+
     return 1;
 }
 
@@ -12,6 +14,8 @@ int game_run()
 {
     char strSent[] = "Running the game\n";
     printf(strSent);
+
+    Map_Print();
 
     return 1;
 }
