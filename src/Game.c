@@ -12,10 +12,27 @@ int game_init()
 
 int game_run()
 {
+    const int64_t iTargetFrameTime = 16; //milliseconds
+    int64_t iFrameStartTimeinMilliseconds, iFrameEndTimeinMilliseconds, iActualFrameTime;
     char strSent[] = "Running the game\n";
     printf(strSent);
 
-    Map_Print();
+    while(1)
+    {
+        iFrameStartTimeinMilliseconds = OS_GetCurrentTime();
+
+        Map_Print();
+        printf("\033[H"); //move cursor back to top right (redraw dont' clear)
+
+
+        iFrameEndTimeinMilliseconds = OS_GetCurrentTime();
+        iActualFrameTime = iFrameEndTimeinMilliseconds - iFrameStartTimeinMilliseconds;
+        if( iActualFrameTime < iTargetFrameTime )
+        {
+            OS_Sleep( iTargetFrameTime - iActualFrameTime - 1 );
+        }
+
+    }
 
     return 1;
 }

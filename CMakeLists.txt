@@ -12,9 +12,11 @@ set(CMAKE_RUNTIME_OUTPUT_DIRECTORY "${CMAKE_BINARY_DIR}/")
 ### Dependencies
 include_directories("src"
                     "src/Map"
+                    "src/OSCommands"
                     )
 
 set(SOURCE_FILES
+    src/OSCommands/OSCommands.c
     src/Map/Map.c
     src/Game.c
     src/main.c
