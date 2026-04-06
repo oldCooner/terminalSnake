@@ -5,6 +5,7 @@ int game_init()
     char strSent[] = "Initializing the game\n";
     printf(strSent);
 
+    OS_ClearScreen();
     Map_Init();
 
     return 1;

@@ -15,5 +15,6 @@
 
 int64_t OS_GetCurrentTime(); //int isn't big enough
 void OS_Sleep( uint64_t iMillisecondsToSleep );
+void OS_ClearScreen();
 
 #endif

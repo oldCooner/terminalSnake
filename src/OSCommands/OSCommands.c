@@ -52,3 +52,14 @@ void OS_Sleep( uint64_t iMillisecondsToSleep )
     nanosleep( &ts, NULL );
 #endif
 }
+
+void OS_ClearScreen()
+{
+#ifdef _WIN32
+    system("cls");
+#endif
+
+#ifdef __linux__
+    system("clear");
+#endif
+}
