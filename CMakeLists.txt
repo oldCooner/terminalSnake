@@ -17,6 +17,7 @@ include_directories("src"
 
 set(SOURCE_FILES
     src/OSCommands/OSCommands.c
+    src/OSCommands/KeyboardHandler.c
     src/Map/Map.c
     src/Game.c
     src/main.c
