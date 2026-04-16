@@ -5,6 +5,7 @@
 #include <stdio.h>
 
 #include "OSCommands.h"
+#include "KeyboardHandler.h"
 #include "Map.h"
 
 

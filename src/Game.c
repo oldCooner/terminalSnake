@@ -6,6 +6,7 @@ int game_init()
     printf(strSent);
 
     OS_ClearScreen();
+    Keyboard_Init();
     Map_Init();
 
     return 1;
@@ -41,6 +42,7 @@ int game_run()
 int game_exit()
 {
     char strSent[] = "Exiting the game\n";
+    Keyboard_Exit();
     printf(strSent);
 
     return 1;

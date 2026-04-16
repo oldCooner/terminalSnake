@@ -25,11 +25,12 @@ enum _KEYBOARD_KEYS
     SUPPORTED_KEY_COUNT
 };
 
-int arrKeyboardKeyState[SUPPORTED_KEY_COUNT];
+extern int arrKeyboardKeyState[SUPPORTED_KEY_COUNT];
 
 int Keyboard_Init();
+int Keyboard_Exit();
 void Keyboard_EnableRawMode( struct termios *pInputTerminal );
-void Keyboard_RestoreTerminal();
+void Keyboard_RestoreTerminal( struct termios *pInputTerminal );
 
 void Keyboard_ScanKeyBoard();
 
